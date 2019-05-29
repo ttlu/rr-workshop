@@ -2,7 +2,9 @@
 title: "My report"
 author: "TingTing"
 date: "May 29, 2019"
-output: html_document
+output: 
+html_document:
+      keep_md: true
 ---
 
 *This is some formatting*
@@ -49,6 +51,6 @@ max_iceland_lifeexp <- max(iceland$lifeExp)
 The largest populaitono f any country in this dataset is `r max_iceland_lifeexp`.
 
 ```{r global_options, echo=FALSE}
-knitr::opts_chunk$()
-```
 
+```
+**Some other formats**
