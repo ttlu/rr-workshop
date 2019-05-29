@@ -1,0 +1,54 @@
+---
+title: "My report"
+author: "TingTing"
+date: "May 29, 2019"
+output: html_document
+---
+
+*This is some formatting*
+
+**Some other formats**
+
+- item 1
+- item 2
+
+
+1. list 1
+1. list 2
+
+
+
+```{r load_data, results = "hide", message=FALSE, warning=FALSE}
+library(gapminder)
+library(ggplot2)
+library(tidyverse)
+
+data(gapminder)
+head(gapminder)
+
+
+```
+
+```{r gdp_lifeexp_plot, echo=F}
+ggplot(data=gapminder, mapping = aes(x=gdpPercap, y = lifeExp))+
+    geom_point()
+
+```
+
+```{r lifeexp_over_time, fig.width=3}
+ggplot(data=gapminder, mapping = aes(x=year, y = lifeExp))+
+    geom_point()
+```
+
+```{r iceland, echo=FALSE}
+iceland<- filter(gapminder, country =="Iceland")
+max_iceland_lifeexp <- max(iceland$lifeExp)
+
+```
+
+The largest populaitono f any country in this dataset is `r max_iceland_lifeexp`.
+
+```{r global_options, echo=FALSE}
+knitr::opts_chunk$()
+```
+
