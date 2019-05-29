@@ -3,7 +3,7 @@ title: "My report"
 author: "TingTing"
 date: "May 29, 2019"
 output: 
-html_document:
+  html_document:
       keep_md: true
 ---
 
